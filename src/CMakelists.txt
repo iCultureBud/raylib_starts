@@ -1,0 +1,21 @@
+add_executable(
+	${PROJECT_NAME}
+
+	main.cpp
+)
+
+target_sources(
+	${PROJECT_NAME}
+	PUBLIC
+	
+	logger.cpp
+	game.cpp
+	window.cpp
+)
+
+include_directories(/opt/homebrew/include)
+link_directories(/opt/homebrew/lib)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE build_settings PUBLIC raylib)
+
+find_package(raylib 5.5 QUIET)
